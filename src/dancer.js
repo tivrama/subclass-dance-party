@@ -7,7 +7,7 @@ var MakeDancer = function(top, left, timeBetweenSteps){
   // console.log('this.prototype, ', MakeDancer.prototype.step);
 
   this.stepTime = timeBetweenSteps; //experiment with set timeout
-  console.log('this.steptime in MakeDancer, ', this.stepTime);
+  //console.log(this.setPosition(500,100), 'set position');
   this.setPosition(top, left);
   this.step();//this.firstStep();
 };
@@ -21,12 +21,14 @@ var MakeDancer = function(top, left, timeBetweenSteps){
   MakeDancer.prototype.step = function(){ //MakeDancer.prototype.firstStep = function(){
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
-    // var context = this;
+    var context = this;
     // var callMethod = function() {
     //   context.step();
     // }
     // console.log('this inside step, ', this);
-    window.setTimeout(this.step.bind(this), this.stepTime);
+    // var timedStep = MakeBlinkyDancer.prototype.step.call(this); //blinky dancer step
+    //window.setTimeout(this.step.bind(this), this.stepTime); //works but doesn't pass test
+    window.setTimeout(function(){context.step.call(context)}, context.stepTime);
     //this.step;
   };
 
