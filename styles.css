@@ -25,3 +25,8 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.wiggle{
+  border:15px solid yellow;
+  border-radius:15px;
+  position:absolute;
+}
