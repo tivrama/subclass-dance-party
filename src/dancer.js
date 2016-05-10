@@ -2,9 +2,14 @@
 var MakeDancer = function(top, left, timeBetweenSteps){
 
   this.$node = $('<span class="dancer"></span>');
-  this.firstStep();
-  this.setPosition(top, left);
+
+  // console.log('this.step inside Make Dancer, ', this.step.bind(MakeDancer.prototype.step))
+  // console.log('this.prototype, ', MakeDancer.prototype.step);
+
   this.stepTime = timeBetweenSteps; //experiment with set timeout
+  console.log('this.steptime in MakeDancer, ', this.stepTime);
+  this.setPosition(top, left);
+  this.step();//this.firstStep();
 };
 
 
@@ -13,14 +18,14 @@ var MakeDancer = function(top, left, timeBetweenSteps){
   // use jQuery to create an HTML <span> tag
 
 
-  MakeDancer.prototype.firstStep = function(){
+  MakeDancer.prototype.step = function(){ //MakeDancer.prototype.firstStep = function(){
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
     // var context = this;
     // var callMethod = function() {
     //   context.step();
     // }
-    console.log(this.stepTime);
+    // console.log('this inside step, ', this);
     window.setTimeout(this.step.bind(this), this.stepTime);
     //this.step;
   };

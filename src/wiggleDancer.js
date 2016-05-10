@@ -18,20 +18,21 @@ MakeWiggleDancer.prototype = Object.create(MakeDancer.prototype);
 MakeWiggleDancer.prototype.constructor = MakeWiggleDancer
 
 MakeWiggleDancer.prototype.step = function(){
+  MakeDancer.prototype.step.call(this);
   //check if dancer has wiggled
   if(this.wiggle) {
+    console.log('left');
     this.$node.animate({left: '+=5', top: '+=5'}, 100);
     this.wiggle = false;
   }
   else {
+    console.log('right');
     this.$node.animate({left: '-=5', top: '-=5'}, 100);
     this.wiggle = true;
   }
 
-  this.firstStep();
 
   };
 
 
 
-  
