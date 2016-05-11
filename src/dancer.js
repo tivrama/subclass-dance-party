@@ -10,6 +10,8 @@ var MakeDancer = function(top, left, timeBetweenSteps){
   //console.log(this.setPosition(500,100), 'set position');
   this.setPosition(top, left);
   this.step();//this.firstStep();
+  this.top = top;
+  this.left = left;
 };
 
 
@@ -28,6 +30,7 @@ var MakeDancer = function(top, left, timeBetweenSteps){
     // console.log('this inside step, ', this);
     // var timedStep = MakeBlinkyDancer.prototype.step.call(this); //blinky dancer step
     //window.setTimeout(this.step.bind(this), this.stepTime); //works but doesn't pass test
+    // window.setTimeout(function(){context.step()}, this.stepTime);
     window.setTimeout(function(){context.step.call(context)}, context.stepTime);
     //this.step;
   };
