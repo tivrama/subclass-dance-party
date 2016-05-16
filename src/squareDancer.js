@@ -14,19 +14,19 @@ MakeSquareDancer.prototype.step = function() {
 MakeDancer.prototype.step.call(this);
 
   if(this.x && this.y) {
-    this.$node.animate({left: '+=30'}, 100);
+    this.$node.animate({left: '+=50'}, 100);
     this.x = false;
   }
   else if (!this.x && this.y){
-    this.$node.animate({top: '+=30'}, 100);
+    this.$node.animate({top: '+=50'}, 100);
     this.y = false;
   }
   else if (!this.x && !this.y) {
-    this.$node.animate({left: '-=30'}, 100);
+    this.$node.animate({left: '-=50'}, 100);
     this.x = true;
   }
   else if (this.x && !this.y){
-    this.$node.animate({top: '-=30'}, 100);
+    this.$node.animate({top: '-=50'}, 100);
     this.y = true;
   }
 

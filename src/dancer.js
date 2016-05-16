@@ -10,12 +10,9 @@ var MakeDancer = function(top, left, timeBetweenSteps){
   //console.log(this.setPosition(500,100), 'set position');
   this.setPosition(top, left);
   this.step();//this.firstStep();
-  this.top = top;
-  this.left = left;
 };
 
 
-  // var dancer = {}; dont need this
 
   // use jQuery to create an HTML <span> tag
 
@@ -24,11 +21,8 @@ var MakeDancer = function(top, left, timeBetweenSteps){
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
     var context = this;
-    // var callMethod = function() {
-    //   context.step();
-    // }
-    // console.log('this inside step, ', this);
-    // var timedStep = MakeBlinkyDancer.prototype.step.call(this); //blinky dancer step
+
+    // var timedStep = MakeBlinkyDancer.prototype.step.call(this); //Change method name works, but fails test
     //window.setTimeout(this.step.bind(this), this.stepTime); //works but doesn't pass test
     // window.setTimeout(function(){context.step()}, this.stepTime);
     window.setTimeout(function(){context.step.call(context)}, context.stepTime);

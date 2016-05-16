@@ -8,10 +8,10 @@ var MakeBlinkyDancer = function(top, left, timeBetweenSteps){
   //Make a copy of MakeDancer.step
   //MakeDancer.prototype.step;
   // this.oldStep = this.step;
+};
 
   
 
-};
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
 MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer
 

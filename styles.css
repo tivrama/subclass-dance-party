@@ -36,3 +36,15 @@ body, a:link, a:visited, a:active{
   border-radius:0px;
   position:absolute;
 }
+
+.circle{
+  border:50px solid blue;
+  border-radius:15px;
+  position:absolute;
+  -webkit-animation: spin .5s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  100%  {-webkit-transform: rotate(180deg);}
+  100% {-webkit-transform: rotate(360deg);}   
+}
